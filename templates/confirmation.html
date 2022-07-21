@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap Css -->
+    <link href="{{url_for('static', filename='css/bootstrap.min.css', _external=True)}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{{url_for('static', filename='css/icons.min.css', _external=True)}}" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="{{url_for('static', filename='css/app.min.css', _external=True)}}" id="app-style" rel="stylesheet" type="text/css" />
+    <title>Confirmation page</title>
+</head>
+<body>
+    <div class="container"></div>
+    <h1 class="text-center">Hi {{firstname}}</h1>
+    <h1 class="text-center">Your account successfully created!!</h1>
+    <a class="text-center" href="/">Click here</a>
+    
+</body>
+</html>

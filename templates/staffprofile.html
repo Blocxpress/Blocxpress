@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+     
+        <h4 class="card-title">Staff Profile</h4>   
+        {%for data in update_agent_profile %}
+        <form action="staff_update_profile" method="post">    
+        <input class="form-control" type="hidden" name="id"  value="" readonly>     
+         <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">First Name</label>
+            <div class="col-md-5">
+                <input class="form-control" type="text" name="firstname" value="{{data.firstname}}" readonly>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Last Name</label>
+            <div class="col-md-5">
+                <input class="form-control" type="text" name="lastname" value="{{data.lastname}}" readonly>
+            </div>
+        </div>
+         
+         <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Phone Number</label>
+            <div class="col-md-5">
+                <input class="form-control" type="text" name="phone"  value="{{data.phone}}">
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Contact Address</label>
+            <div class="col-md-8">
+                <input class="form-control" type="text" name="contact_address" value="{{data.contact_address}}" required>
+            </div>
+        </div>        
+        <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">L.G.A</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" name="lga" value="{{data.lga}}"  required>
+            </div>
+        </div>
+		 <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">State</label>
+            <div class="col-md-5">
+                <input class="form-control" type="text" name="state" value="{{data.state}}"  required>
+            </div>
+        </div>
+		
+		<div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Bank Account </label>
+            <div class="col-md-5">
+                <input class="form-control" type="text" name="bank_account" value="{{data.bank_account}}"  required>
+            </div>
+        </div>
+        
+		<div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Account Title </label>
+            <div class="col-md-6">
+                <input class="form-control" type="text" name="bank_title" value="{{data.bank_title}}"  required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Bank Name </label>
+            <div class="col-md-6">
+                <input class="form-control" type="text" name="bank_name" value="{{data.bank_name}}"  required>
+            </div>
+        </div>
+		
+		<div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Next Of Kin Name </label>
+            <div class="col-md-6">
+                <input class="form-control" type="text" name="next_of_kin_name" value="{{data.next_of_kin_name}}"  required>
+            </div>
+        </div>
+        
+		<div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Next of Kin Phone </label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" name="next_of_kin_phone" value="{{data.next_of_kin_phone}}"  required>
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Next of Kin Contact Address </label>
+            <div class="col-md-8">
+                <input class="form-control" type="text" name="next_of_kin_contact" value="{{data.next_of_kin_contact}}"  required>
+                <input type="hidden" name="id" value={{data.id}}>
+            </div>
+        </div>
+        {% endfor %}
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block waves-effect waves-light mb-1 col-md-8">Update Profile</button>
+        
+    </form> 
+    
+    </div>
+</div>
+
+
+
+{% endblock %}

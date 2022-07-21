@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <div class="card-body">
+
+        <h4 class="card-title">Assign Agent</h4>   
+        <form action="/requestupdate" method="post">    
+        <div class="form-group row">
+            {% for item in something %}
+            <label for="example-text-input" class="col-md-2 col-form-label">ID</label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" name="id"  value="{{item.id}}" readonly>
+            </div>
+        </div>
+         
+         <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Type of Goods</label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" name="type_of_goods" value="{{item.type_of_goods}}" readonly>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Quantity</label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" name="quantity" value="{{item.quantity}}" readonly>
+            </div>
+        </div>
+         
+         <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Destination</label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" name="destination"  value="{{item.destination}}" readonly>
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Location</label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" name="location" value="{{item.location}}" readonly>
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">State</label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" name="state_origin" value="{{item.state_origin}}" readonly>
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Amount</label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" name="amount" value="{{item.amount}}"  required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label">Status</label>
+            <div class="col-md-10">
+                <select class="form-control" name="order_status">
+                    
+                    <option>{{item.order_status}}</option>
+                    <option>Assigned to Agent</option>
+                    <option>Paid</option>
+                    
+                </select>
+            </div>
+        </div>
+
+        {% endfor %}
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label">Agents</label>
+            <div class="col-md-10">
+                <select class="form-control" name="agent_id">
+                    {% for ag in getAgent %}
+                    <option>{{ag.firstname}}</option>
+                    {% endfor %}
+                    
+                </select>
+            </div>
+        </div>
+
+        
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block waves-effect waves-light mb-1">Assign Agent</button>
+        
+    </form> 
+    
+    </div>
+</div>
+
+
+{% endblock %}

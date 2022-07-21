@@ -1,0 +1,45 @@
+{% extends "base_agent.html" %}
+{% block content %}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">My Request</h4>                
+                                        <div class="table-responsive">
+                                            <table class="table mb-0">
+        
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Type of Goods</th>
+                                                        <th>Location</th>
+                                                        <th>Destination</th>
+                                                        <th>State</th>
+                                                        <th>Quantity</th>
+                                                        <th>Amount</th>
+                                                        <th>Date</th>
+                                                        <th>Status</th>
+                                                        <th>Assign Driver</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for item in getRequest %}
+                                                    <tr>
+                                                        <th scope="row">{{item.id}}</th>
+                                                        <td>{{item.type_of_goods}}</td>
+                                                        <td>{{item.location}}</td>
+                                                        <td>{{item.destination}}</td>
+                                                        <td>{{item.state_origin}}</td>
+                                                        <td>{{item.quantity}}</td>
+                                                        <td>{{item.amount}}</td>
+                                                        <td>{{item.date_time}}</td>
+                                                        <td>{{item.order_status}}</td>
+                                                        <td><a href="#" class="btn btn-primary">Assign Driver</a></td>
+                                                    </tr>
+                                                    {%endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+        
+                                    </div>
+                                </div>    
+
+{% endblock %}

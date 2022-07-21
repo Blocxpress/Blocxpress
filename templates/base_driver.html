@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        
+        <meta charset="utf-8" />
+        <title> BlocXpress| Driver Panel</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Agrobloc Integrated Limited " name="description" />
+        <meta content="Agrobloc Commodity" name="Aminu Bin Ibrahim" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.ico', _external=True)}}">
+
+        
+
+        <!-- Bootstrap Css -->
+        <link href="{{url_for('static', filename='css/bootstrap.min.css', _external=True)}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="{{url_for('static', filename='css/icons.min.css', _external=True)}}" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="{{url_for('static', filename='css/app.min.css', _external=True)}}" id="app-style" rel="stylesheet" type="text/css" />
+
+
+        
+
+    </head>
+
+    <body data-sidebar="dark">
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+
+            <header id="page-topbar">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box">
+                            <a href="#" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <h5>BlocXpress</h5>
+                                </span>
+                                <span class="logo-lg">
+                                    <img src=" {{url_for('static', filename='images/aglogo.png', _external=True)}}" alt="" height="20">
+                                   
+                                </span>
+                            </a>
+
+                            <a href="#" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <h5>BlocXpress</h5>
+                                </span>
+                                <span class="logo-lg">
+                                    <img src=" {{url_for('static', filename='images/aglogo.png', _external=True)}}" alt="" height="20">
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
+                            <i class="ri-menu-2-line align-middle"></i>
+                        </button>
+                    </div>
+
+                    <div class="d-flex">
+
+                        <!--<div class="dropdown d-none d-sm-inline-block">
+                            <button type="button" class="btn header-item waves-effect"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="" src="static/assets/images/flags/us.jpg" alt="Header Language" height="16">
+                            </button>
+                            
+                        </div>-->
+
+
+                        <div class="dropdown d-none d-lg-inline-block ml-1">
+                            <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
+                                <i class="ri-fullscreen-line"></i>
+                            </button>
+                        </div>    
+
+                        <div class="dropdown d-inline-block user-dropdown">
+                            <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="rounded-circle header-profile-user" src="static/images/users/avatar-2.jpg"
+                                    alt="Header Avatar">
+                                <span class="d-none d-xl-inline-block ml-1">{{firstname}}</span>
+                                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <!-- item-->
+                                <a class="dropdown-item" href="{{url_for('superadmin.staffprofile')}}"><i class="ri-user-line align-middle mr-1"></i> Profile</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="{{url_for('logout')}}"><i class="ri-shut-down-line align-middle mr-1 text-danger"></i> Logout</a>
+                            </div>
+						</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+                <div data-simplebar class="h-100">
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <!-- Left Menu Start -->
+                        <ul class="metismenu list-unstyled" id="side-menu">
+                            <li class="menu-title">Menu</li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ri-store-2-line"></i>
+                                    <span>Driver Panel</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{url_for('driver.driver_profile')}}">Profile</a></li>
+                                    <li><a href="{{url_for('driver.driver_dashboard')}}">Requests</a></li>
+                                    <li><a href="{{url_for('driver.driver_support')}}">Support</a></li>
+                                    
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="page-title-box d-flex align-items-center justify-content-between">
+                            <h4 class="mb-0">Hello! {{firstname}} ,{{lastname}}</h4>
+
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
+                                            <li class="breadcrumb-item active"></li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- End of home-Business tools -->
+                        
+                        <div class="row"> <!--Row 2 Begin-->
+                            <div class="col-12"> <!--Column begin-->
+                                    
+                                 {% block content %} {% endblock %}
+                            
+
+
+
+
+                            
+                            </div><!--Column End-->       
+						</div> <!--Row 2 End-->
+                    <div> <!-- container-fluid -->
+                <!-- End Page-content -->
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <script>document.write(new Date().getFullYear())</script> © BlocXpress.
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-sm-right d-none d-sm-block">
+                                    from Agrobloc 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            <!-- end main content-->
+        
+        <div class="rightbar-overlay"></div>
+
+        <!-- JAVASCRIPT -->
+        <script src=" {{url_for('static', filename='libs/jquery/jquery.min.js', _external=True)}}"></script>
+        
+        <script src="{{url_for('static', filename='libs/bootstrap/js/bootstrap.bundle.min.js', _external=True)}}"></script>
+        <script src="{{url_for('static', filename='libs/metismenu/metisMenu.min.js', _external=True)}}"></script>
+        <script src="{{url_for('static', filename='libs/simplebar/simplebar.min.js', _external=True)}}"></script>
+        <script src="{{url_for('static', filename='libs/node-waves/waves.min.js', _external=True)}}"></script>
+        <script src="{{url_for('static', filename='js/pages/dashboard.init.js', _external=True)}}"></script>
+        <script src="{{url_for('static', filename='js/app.js', _external=True)}}"></script>
+        
+
+    </body>
+</html>

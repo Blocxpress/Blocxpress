@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        
+        <meta charset="utf-8" />
+        <title> BlockXpress| Client</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Agrobloc Integrated Limited " name="description" />
+        <meta content="Agrobloc Commodity" name="Aminu Bin Ibrahim" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="static/images/favicon.ico">
+
+        
+
+        <!-- Bootstrap Css -->
+        <link href="static/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="static/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="static/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body data-sidebar="dark">
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+
+            <header id="page-topbar">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box">
+                            <a href="#" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <h5>BlockXpress| Client</h5>
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="static/images/aglogo.png" alt="" height="20">
+                                </span>
+                            </a>
+
+                            <a href="#" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <h5>BlockXpress| Client</h5>
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="static/images/aglogo.png" alt="" height="20">
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
+                            <i class="ri-menu-2-line align-middle"></i>
+                        </button>
+                    </div>
+
+                    <div class="d-flex">
+
+                        <!--<div class="dropdown d-none d-sm-inline-block">
+                            <button type="button" class="btn header-item waves-effect"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="" src="static/assets/images/flags/us.jpg" alt="Header Language" height="16">
+                            </button>
+                            
+                        </div>-->
+
+
+                        <div class="dropdown d-none d-lg-inline-block ml-1">
+                            <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
+                                <i class="ri-fullscreen-line"></i>
+                            </button>
+                        </div>    
+
+                        <div class="dropdown d-inline-block user-dropdown">
+                            <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="rounded-circle header-profile-user" src="static/assets/images/users/avatar-2.jpg"
+                                    alt="Header Avatar">
+                                <span class="d-none d-xl-inline-block ml-1">{{firstname}}</span>
+                                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <!-- item-->
+                                <a class="dropdown-item" href="#"><i class="ri-user-line align-middle mr-1"></i> Profile</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="{{'logout'}}"><i class="ri-shut-down-line align-middle mr-1 text-danger"></i> Logout</a>
+                            </div>
+						</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+                <div data-simplebar class="h-100">
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <!-- Left Menu Start -->
+                        <ul class="metismenu list-unstyled" id="side-menu">
+                            <li class="menu-title">Menu</li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ri-store-2-line"></i>
+                                    <span>Client</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="#">Request for Truck</a></li>
+                                    <li><a href="#">Transcations</a></li>
+                                    <li><a href="#">Real-time Tracking</a></li>
+                                    <li><a href="#">Support</a></li>
+                                    
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="page-title-box d-flex align-items-center justify-content-between">
+                            <h4 class="mb-0">Hello! {{firstname}}, {{lastname}}</h4>
+
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
+                                            <li class="breadcrumb-item active"></li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- End of home-Business tools -->
+						<div class="row">
+								  <div class="col-12">
+                                   <!--this is where all the content goes-->
+                                   <div class="card-body">
+                                    <h4 class="card-title">Request for truck</h4>
+                                    <p class="card-title-desc">We help our client with logistic service</p>
+                                    <form class="needs-validation" novalidate="" method="POST" action="/booking">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="validationCustom01">Type of Goods</label>
+                                                    <input type="text" class="form-control" id="validationCustom01" name="type_of_goods" placeholder="Type of Goods"  required>
+                                                    <div class="valid-feedback">
+                                                        Looks good!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="validationCustom02">Quantity(Bags/Tonnes)</label>
+                                                    <input type="text" class="form-control" id="validationCustom02" name="quantity" placeholder="Quantity" required>
+                                                    <div class="valid-feedback">
+                                                        Looks good!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="validationCustom03">Goods Location</label>
+                                                    <input type="text" class="form-control" id="validationCustom03" name="goods_loc" placeholder="Goods Location" required>
+                                                    <div class="invalid-feedback">
+                                                        Please provide a valid city.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="validationCustom04">Destination</label>
+                                                    <input type="text" class="form-control" id="validationCustom04" name="destination" placeholder="Destination" required>
+                                                    <div class="invalid-feedback">
+                                                        Please provide a valid state.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="validationCustom04">State</label>
+                                                    <select name="states_of_nigeria" id="select" class="form-control" required>
+                                                        <option>Outside Nigeria</option>
+                                                        <option>ABUJA FCT</option>
+                                                        <option>ABIA</option>
+                                                        <option>ADAMAWA</option>
+                                                        <option>AKWA IBOM</option>
+                                                        <option>ANAMBRA</option>
+                                                        <option>BAUCHI</option>
+                                                        <option>BAYELSA</option>
+                                                        <option>BENUE</option>
+                                                        <option>BORNO</option>
+                                                        <option>CROSS RIVER</option>
+                                                        <option>DELTA</option>
+                                                        <option>EBONYI</option>
+                                                        <option>EDO</option>
+                                                        <option>EKITI</option>
+                                                        <option>ENUGU</option>
+                                                        <option>GOMBE</option>
+                                                        <option>IMO</option>
+                                                        <option>JIGAWA</option>
+                                                        <option>KADUNA</option>
+                                                        <option>KANO</option>
+                                                        <option>KATSINA</option>
+                                                        <option>KEBBI</option>
+                                                        <option>KOGI</option>
+                                                        <option>KWARA</option>
+                                                        <option>LAGOS</option>
+                                                        <option>NASSARAWA</option>
+                                                        <option>NIGER</option>
+                                                        <option>OGUN</option>
+                                                        <option>ONDO</option>
+                                                        <option>OSUN</option>
+                                                        <option>OYO</option>
+                                                        <option>PLATEAU</option>
+                                                        <option>RIVERS</option>
+                                                        <option>SOKOTO</option>
+                                                        <option>TARABA</option>
+                                                        <option>YOBE</option>
+                                                        <option>ZAMFARA</option>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="validationCustom05">Date</label>
+                                                    <input type="date" class="form-control" id="validationCustom05" name="book_date"  required>
+                                                    <div class="invalid-feedback">
+                                                        Please provide a valid zip.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="invalidCheck" required>
+                                                        <label class="custom-control-label" for="invalidCheck">Agree to terms and conditions</label>
+                                                        <div class="invalid-feedback">
+                                                            You must agree before submitting.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary" type="submit">Submit Request</button>
+                                    </form>
+                                </div>
+                                   
+
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">My Request</h4>                
+                                        <div class="table-responsive">
+                                            <table class="table mb-0">
+        
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Type of Goods</th>
+                                                        <th>Location</th>
+                                                        <th>Destination</th>
+                                                        <th>State</th>
+                                                        <th>Quantity</th>
+                                                        <th>Amount</th>
+                                                        <th>Date</th>
+                                                        <th>Status</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for item in getRequest %}
+                                                    <tr>
+                                                        <th scope="row">{{item.id}}</th>
+                                                        <td>{{item.type_of_goods}}</td>
+                                                        <td>{{item.location}}</td>
+                                                        <td>{{item.destination}}</td>
+                                                        <td>{{item.state_origin}}</td>
+                                                        <td>{{item.quantity}}</td>
+                                                        <td>{{item.amount}}</td>
+                                                        <td>{{item.date_time}}</td>
+                                                        <td>{{item.order_status}}</td>
+                                                        <td><a href="#" class="btn btn-primary">Make Payment</a></td>
+                                                    </tr>
+                                                    {%endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+        
+                                    </div>
+                                </div>
+						</div>
+                    <div> <!-- container-fluid -->
+                <!-- End Page-content -->
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <script>document.write(new Date().getFullYear())</script> © BlockXpress.
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-sm-right d-none d-sm-block">
+                                    from <i class="mdi mdi-heart text-danger"></i>Agrobloc 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            <!-- end main content-->
+        
+        <div class="rightbar-overlay"></div>
+
+        <!-- JAVASCRIPT -->
+        <script src="static/libs/jquery/jquery.min.js"></script>
+        <script src="static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="static/libs/metismenu/metisMenu.min.js"></script>
+        <script src="static/libs/simplebar/simplebar.min.js"></script>
+        <script src="static/libs/node-waves/waves.min.js"></script>
+        <script src="static/js/pages/dashboard.init.js"></script>
+
+        <script src="static/js/app.js"></script>
+
+    </body>
+</html>
